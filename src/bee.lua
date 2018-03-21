@@ -1,20 +1,13 @@
+local Model = require('bee_model')
+local View = require('bee_view')
+
 return function()
-
-  local x,y = 400, 300
-
-  local function move()
-    x = x - 1
-    y = y - 1
-  end
+  local model = Model()
+  local view = View()
 
   local function draw()
-    love.graphics.setColor(255, 255, 255)
-    love.graphics.circle("fill", x, y, 10)
-    love.graphics.print("This is a bee", x + 5, y + 5)
+    view.draw(model.draw_data())
   end
 
-  local function init()
-  end
-
-  return {load = init, update = move, draw = draw}
+  return {update = model.update, load = model.load, draw = draw}
 end

@@ -1,7 +1,9 @@
+require('path')
+
 game_objects = {}
 
 function love.load()
-  local bee = require('./src/bee')
+  local bee = require('bee')
   table.insert(game_objects, bee())
 end
 
