@@ -7,9 +7,9 @@ function love.load()
   table.insert(game_objects, bee())
 end
 
-function love.update()
+function love.update(dt)
   for _,i in pairs(game_objects) do
-    i.update()
+    i.update(dt)
   end
 end
 
