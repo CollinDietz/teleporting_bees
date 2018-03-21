@@ -4,11 +4,6 @@
 language: python
 sudo: false
 
-branches:
-  only:
-    master
-    develop
-
 env:
   - LUA="lua=5.3"
   - LUA="luajit=2.1"
