@@ -1,10 +1,15 @@
 return function()
 
   local x,y = 400, 300
+  local t = 0
+  local radialVelocity = 5
+  local flightRadius = 25
+  local radialX, radialY = x - flightRadius, y - flightRadius
 
-  local function move()
-    x = x - 1
-    y = y - 1
+  local function move(dt)
+    t = t + dt
+    x = flightRadius * math.cos(radialVelocity * t) + radialX
+    y = flightRadius * math.sin(radialVelocity * t) + radialY
   end
 
   local function init()
